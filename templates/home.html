@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <style>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+    
+            .container {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                margin-top: 50px;
+            }
+    
+            .card {
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+                margin: 10px;
+                width: 200px;
+                transition: transform 0.3s ease;
+            }
+    
+            .card:hover {
+                transform: scale(1.05);
+            }
+    
+            button {
+                background-color: black;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                transition: background-color 0.3s ease;
+            }
+    
+            button:hover {
+                background-color: #45a049;
+            }
+        </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card" onmouseover="rotateCard(this)" onmouseout="resetRotation(this)">
+            <button onclick="location.href='{% url 'similarity' %}'"> Euclidean Distance</button>
+        </div>
+        
+        <div class="card" onmouseover="rotateCard(this)" onmouseout="resetRotation(this)">
+            <button onclick="location.href='{% url 'index' %}'">Cosine/Normalized Euclidean Distance/TF-IDF Similarity/levenshtein</button>
+        </div>
+        <div class="card" onmouseover="rotateCard(this)" onmouseout="resetRotation(this)">
+            <button onclick="location.href='{% url 'similarity_deg' %}'">Similarity Degree</button>
+        </div>
+    </div>
+
+    
+</body>
+</html>

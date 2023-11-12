@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultat</title>
+</head>
+<body>
+    <h2>Similarity Result:</h2>
+{% if similarity_result %}
+    <p>{{ similarity_result }}</p>
+    <p>Theta Degrees: {{ similarity_result.theta_degrees }}</p>
+{% else %}
+    <p>No similarity result yet. Please enter texts and calculate.</p>
+{% endif %}
+</body>
+</html>

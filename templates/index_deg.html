@@ -1,0 +1,120 @@
+<!-- text_similarity_app/templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Similarity Checker</title>
+
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        form {
+            margin-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color:  #333;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .result {
+            margin-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1s forwards;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        
+        .result-item {
+            margin-top: 10px;
+            color: red;
+        }
+        .result-explanation{
+            margin-top: 10px;
+            color: #555;
+        }
+        
+      
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Text Similarity Checker</h1>
+        </div>
+    </header>
+
+    <div class="container wrapper">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="file1">Select File 1:</label>
+            <input type="file" name="file1" accept=".txt" required>
+
+            <label for="file2">Select File 2:</label>
+            <input type="file" name="file2" accept=".txt" required>
+
+            <input type="submit" value="Check degree Similarity">
+        </form>
+    </div>
+</body>
+</html>

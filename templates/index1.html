@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calcul de Similarité TP 1 </title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file1" accept=".txt">
+        <input type="file" name="file2" accept=".txt">
+        <button type="submit">Calculer Similarité</button>
+    </form>
+</body>
+</html>
